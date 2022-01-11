@@ -1,0 +1,25 @@
+<head>
+  <style type="text/css" media="screen">
+    @import url("/css/main.css");
+  </style>
+</head>
+<body>
+  <h1>Hey There!</h1>
+  <table>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Date</th>
+    {{range .names}}
+    <tr>
+      <td class="textarea">
+        <h3 class="message">{{.Message}}</h3>
+        <img src="/img/{{ .Img }}" class="display-image" />
+        <p class="emailcontent">{{.Content}}</p>
+      </td>
+
+      <td>{{.Domain}}</td>
+      <td>{{.Datetime}}</td>
+    </tr>
+    {{end}}
+  </table>
+</body>
