@@ -1,0 +1,14 @@
+[
+    {
+        "title": "Website formatted",
+        "date": "18/1/22",
+        "content": "We now have a nicer looking site. I do need to clone the scheme over to the rest of the pages but that should be fairly easy",
+        "update": "0.1.1"
+    },
+    {
+        "title": "Initial release",
+        "date": "11/1/22",
+        "content": "Initial creation! We now have a working site! You can't send emails but it can generate spam emails. We will be adding more features soon.",
+        "update": "0.1"
+    }
+]

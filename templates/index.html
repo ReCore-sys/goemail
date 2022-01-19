@@ -1,25 +1,222 @@
-<head>
-  <style type="text/css" media="screen">
-    @import url("/css/main.css");
-  </style>
-</head>
-<body>
-  <h1>Hey There!</h1>
-  <table>
-    <th>Name</th>
-    <th>Email</th>
-    <th>Date</th>
-    {{range .names}}
-    <tr>
-      <td class="textarea">
-        <h3 class="message">{{.Message}}</h3>
-        <img src="/img/{{ .Img }}" class="display-image" />
-        <p class="emailcontent">{{.Content}}</p>
-      </td>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>{{.prettyname}}</title>
+    <meta name="description" content="Why did I do this" />
 
-      <td>{{.Domain}}</td>
-      <td>{{.Datetime}}</td>
-    </tr>
-    {{end}}
-  </table>
-</body>
+    <!--Inter UI font-->
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet" />
+
+    <!--vendors styles-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    />
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="./css/themes/default.css" id="theme-color" />
+    <link rel="stylesheet" href="./css/customhome.css" id="theme-color" />
+  </head>
+  <body>
+    <!--hero header-->
+    <section class="py-7 py-md-0 bg-hero" id="home">
+      <div class="container">
+        <div class="row vh-md-100">
+          <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+            <h1 class="heading-black text-capitalize">{{.prettyname}}</h1>
+            <p class="lead py-3">
+              An email service with a focus on privacy and humor.
+            </p>
+            <button
+              class="btn btn-primary d-inline-flex flex-row align-items-center"
+              onClick="window.location.href = './register'"
+            >
+              Get started now
+              <em class="ml-2" data-feather="arrow-right"></em>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- features section -->
+    <section class="pt-6 pb-7" id="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center">
+            <h2 class="heading-black">
+              Want to email your boss from a very professional email?
+            </h2>
+            <p class="text-muted lead">
+              Whether you want to email HR from BigDaddy@{{.domain}} or send
+              your grandma a photo of your new child from
+              assbeater42069@{{.domain}}, we got you.
+            </p>
+          </div>
+        </div>
+        <div class="row mt-5">
+          <div class="col-md-10 mx-auto">
+            <div class="row feature-boxes">
+              <div class="col-md-6 box">
+                <div class="icon-box box-primary">
+                  <div class="icon-box-inner">
+                    <span data-feather="edit-3" width="35" height="35"></span>
+                  </div>
+                </div>
+                <h5>Rich formatting</h5>
+                <p class="text-muted">
+                  Using high tech HTML and CSS, we can make your email look
+                  badass
+                </p>
+              </div>
+              <div class="col-md-6 box">
+                <div class="icon-box box-success">
+                  <div class="icon-box-inner">
+                    <span data-feather="lock" width="35" height="35"></span>
+                  </div>
+                </div>
+                <h5>High security</h5>
+                <p class="text-muted">
+                  SHA256 encryption, 2FA, bot filtering, the whole shebang to
+                  keep your dick pics safe. I couldn't even read your emails if
+                  I wanted to.
+                </p>
+              </div>
+              <div class="col-md-6 box">
+                <div class="icon-box box-danger">
+                  <div class="icon-box-inner">
+                    <span data-feather="layout" width="35" height="35"></span>
+                  </div>
+                </div>
+                <h5>Looks sexy af</h5>
+                <p class="text-muted">
+                  You gotta admit that this is certainly a vibe
+                </p>
+              </div>
+              <div class="col-md-6 box">
+                <div class="icon-box box-info">
+                  <div class="icon-box-inner">
+                    <span
+                      data-feather="fast-forward"
+                      width="35"
+                      height="35"
+                    ></span>
+                  </div>
+                </div>
+                <h5>High speed</h5>
+                <p class="text-muted">
+                  Using compression methods we can server the site to you at
+                  blazing fast speeds. As for emails, we don't actually use the
+                  email protocol for internal emails so sending emails to
+                  another {{.domain}} email is near instant.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-6">
+          <div class="col-md-6 mr-auto">
+            <h2>{{.prettyname}} is more than a joke</h2>
+            <p class="mb-5">
+              Ok, it is mostly a joke. But it's pretty funny. It does also work,
+              somehow.
+            </p>
+            <a href="/register" class="btn btn-light">Sign up here!</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--news section-->
+    <section class="py-7 bg-dark section-angle top-left bottom-left" id="blog">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 mx-auto text-center">
+            <h2 class="heading-black">News from {{.prettyname}}</h2>
+            <p class="text-muted lead">What's new at {{.prettyname}}</p>
+          </div>
+        </div>
+        <div class="row mt-5 scrolling-wrapper">
+          {{ range .news }}
+          <div class="col-md-4 scroll-item">
+            <div class="card">
+              <div class="card-body">
+                <a href="#" class="card-title mb-2"><h5>{{.Title}}</h5></a>
+                <p class="text-muted small-xl mb-2">{{.Date}}</p>
+                <p class="card-text">
+                  {{.Content}}<br /><a href="/updates#{{.Update}}"
+                    >Learn more</a
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+          {{ end }}
+          <br />
+        </div>
+        <div class="row mt-6">
+          <div class="col-md-6 mx-auto text-center">
+            <a href="#" class="btn btn-primary">View all updates</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--scroll to top-->
+    <div class="scroll-top">
+      <i class="fa fa-angle-up" aria-hidden="true"></i>
+    </div>
+
+    <!-- theme switcher (FOR DEMO ONLY - REMOVE FROM PRODUCTION)-->
+    <div class="switcher-wrap">
+      <div class="switcher-trigger">
+        <span class="fa fa-gear"></span>
+      </div>
+      <div class="color-switcher">
+        <h6>Color Switcher</h6>
+        <ul class="mt-3 clearfix">
+          <li
+            class="bg-teal active"
+            data-color="default"
+            title="Default Teal"
+          ></li>
+          <li class="bg-purple" data-color="purple" title="Purple"></li>
+          <li class="bg-blue" data-color="blue" title="Blue"></li>
+          <li class="bg-red" data-color="red" title="Red"></li>
+          <li class="bg-green" data-color="green" title="Green"></li>
+          <li class="bg-indigo" data-color="indigo" title="Indigo"></li>
+          <li class="bg-orange" data-color="orange" title="Orange"></li>
+          <li class="bg-cyan" data-color="cyan" title="Cyan"></li>
+          <li class="bg-yellow" data-color="yellow" title="Yellow"></li>
+          <li class="bg-pink" data-color="pink" title="Pink"></li>
+        </ul>
+        <p>
+          These are just demo colors. You can <b>easily</b> create your own
+          color scheme.
+        </p>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>

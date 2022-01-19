@@ -16,7 +16,7 @@
       "type": "go",
       "request": "launch",
       "mode": "auto",
-      "program": "${fileDirname}"
+      "program": "C:/Users/ReCor/Documents/OtherCode/gomail/gomail.go"
     }
   ]
 }

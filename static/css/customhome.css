@@ -1,0 +1,43 @@
+.scrolling-wrapper {
+  overflow-x: auto !important;
+  overflow-y: hidden;
+  flex-wrap: inherit !important;
+}
+.scroll-item {
+  display: inline-block;
+}
+
+.card {
+  max-height: 50vh;
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+}
+.card-body {
+  overflow: wrap;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #00ffd5 none;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: none;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #00ffd5;
+  border-radius: 10px;
+  border: 3px none #000000;
+}
+
+:not(scrolling-wrapper) {
+  overflow-x: hidden;
+}
