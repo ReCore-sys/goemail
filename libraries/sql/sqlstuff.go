@@ -145,3 +145,28 @@ func (s *SQL) UUIDfromemail(email string) string {
 	rows.Close()
 	return uuid
 }
+
+// UserfromUUID does what it says on the tin
+func (s *SQL) UserfromUUID(uuid string) User {
+	tx, err := s.Sqlcon.Begin()
+	if err != nil {
+		log.Panic(err)
+	}
+	q, err := tx.Prepare(`SELECT * FROM ` + s.Tablename + " WHERE UUID = '" + uuid + "'")
+	if err != nil {
+		log.Panic(err)
+	}
+	rows, err := q.Query()
+	if err != nil {
+		log.Panic(err)
+	}
+	var user User
+	for rows.Next() {
+		err = rows.Scan(&user.UUID, &user.Name, &user.Email, &user.Password)
+		if err != nil {
+			log.Panic(err)
+		}
+	}
+	rows.Close()
+	return user
+}

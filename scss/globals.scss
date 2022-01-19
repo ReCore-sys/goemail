@@ -1,0 +1,15 @@
+@use "vars";
+
+button:hover {
+  background-color: vars.$dark-primary;
+}
+
+html {
+  background-color: vars.$background;
+  font-family: Titillium;
+}
+
+@font-face {
+  font-family: Titillium;
+  src: url(../fonts/Titillium.ttf);
+}

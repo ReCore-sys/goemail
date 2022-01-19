@@ -1,24 +1,28 @@
 <!-- Create simple login page -->
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Login</title>
-    <link rel="stylesheet" href="css/login.css" />
-  </head>
-  <body>
-    <div class="login-page">
-      <h2>{{.error}}</h2>
-      <div class="form">
-        <form class="login-form" action="login" method="post">
-          <input type="text" placeholder="username" name="username" />
-          <input type="password" placeholder="password" name="password" />
-          <button type="submit">login</button>
-          <p class="message">
-            Not registered?<br />
-            <a href="./register">Create an account</a>
-          </p>
-        </form>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <title>Login</title>
+  <link rel="stylesheet" href="css/login.css" />
+  <link rel="stylesheet" href="css/globals.css" />
+  <link rel="stylesheet" href="css/register.css" />
+</head>
+<body>
+  <div class="login-page">
+    <div class="form">
+      <form class="login-form" action="login" method="post">
+        <h1>Login</h1>
+        {{ if ne .issue "none" }}
+        <div class="alert">
+          <p>{{.issue}}</p>
+        </div>
+        {{else}} {{ end }}
+        <input type="text" placeholder="Email" name="email" />
+        <input type="password" placeholder="Password" name="password" />
+        <button type="submit">Login</button>
+      </form>
+      <p class="loginsuggest">
+        Don't have an account yet? <a href="./register">Make one here</a>
+      </p>
     </div>
-  </body>
-</html>
+  </div>
+</body>

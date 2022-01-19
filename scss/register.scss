@@ -1,0 +1,104 @@
+@use "vars";
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: vars.$dark-grey;
+  width: 50vw;
+  margin-right: 25vw;
+  margin-left: 25vw;
+  height: 75vh;
+  margin-top: calc(25vh / 2);
+  margin-bottom: calc(25vh / 2);
+  border-radius: 15%;
+}
+
+input {
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 10px;
+  height: 5vh;
+  background-color: white;
+  border-style: none;
+  width: 75%;
+}
+
+form {
+  display: contents;
+}
+
+html {
+  align-items: center;
+}
+
+a {
+  color: white;
+}
+
+button {
+  border-radius: 10px;
+  margin: 25px;
+  height: 5vh;
+  background-color: vars.$primary;
+  border-style: none;
+  color: black;
+  font-size: larger;
+}
+
+.loginsuggest {
+  background-color: darken(vars.$dark-primary, 15%);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.alert {
+  background-color: lightcoral;
+  border-radius: 25px;
+  padding: 10px;
+}
+
+.inputarea {
+  margin: 25px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.mailholder {
+  width: 75%;
+  display: flex;
+}
+
+.emailprompt {
+  float: right;
+  background-color: white;
+  height: 5vh;
+  width: 50%;
+  margin-top: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-left-color: #393b40 !important;
+  border-left: 5px;
+  border-left-style: solid;
+  text-align: center;
+  color: vars.$dark-grey;
+}
+.prompttext {
+  margin-top: 4px;
+}
+
+.inpmail {
+  float: left;
+  width: 50%;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  overflow-x: scroll;
+}
