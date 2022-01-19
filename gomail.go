@@ -19,8 +19,8 @@ import (
 )
 
 const (
-	domain     = "mommymilkies.org"
-	prettyname = "Mommy Milkies"
+	domain     = "namepending.org"
+	prettyname = "Name Pending"
 )
 
 var filelocation, _ = os.Getwd()

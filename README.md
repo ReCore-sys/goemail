@@ -2,7 +2,7 @@
 
 <img alt="Code Time" src="https://img.shields.io/endpoint?style=flat&url=https://codetime-api.datreks.com/badge/3323?logoColor=white%26project=%26recentMS=0%26showProject=true" />
 <img src="https://img.shields.io/github/go-mod/go-version/ReCore-sys/goemail" />
-<img src="https://img.shields.io/github/last-commit/ReCore-sys/goemail" /> <img src="https://img.shields.io/github/languages/code-size/ReCore-sys/goemail" />
+<img src="https://img.shields.io/github/last-commit/ReCore-sys/goemail" /><img src="https://img.shields.io/github/languages/code-size/ReCore-sys/goemail" />
 <img src="https://img.shields.io/badge/Location-Your%20Mother's%20house-success">
 
 The actual name is to be decided on but for now it is Gomail. Mommiemilkies.org is looking hopeful.
